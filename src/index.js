@@ -1,15 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-require('./index.css')
-import store from './store'
+import { Provider } from 'react-redux';
 
-const App = () => {
-    return (
-        <div>
-            Hello React,Webpack 4 & Babel 7 new!
-            <img src="./images/apple_GettyImages186843005_cmyk.jpg" alt="" />
-        </div>
-    );
-};
+import store from './store';
+import App from '../src/components/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+
+ReactDOM.render(
+    <Provider store={store}><App /></Provider>,
+    document.getElementById('root')
+);
