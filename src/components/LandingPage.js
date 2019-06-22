@@ -12,22 +12,23 @@ class Landingpage extends Component {
                         <div className="title">
                             Welcome To Bookify
                     </div>
-                        <button className="login">
-                            <Link to="/login" />
-                            Login
-                        </button>
-                        <span className="some-border"></span>
-                        <button className="signup">
-                            <Link to="/signup" />
-                            SignUp
+                        <Link to="/login">
+                            <button className="login">
+                                Login
                             </button>
+                        </Link>
+                        <span className="some-border"></span>
+                        <Link to="/signup">
+                            <button className="signup">
+                                SignUp
+                            </button>
+                        </Link>
                     </div>
-
                 </header>
                 <footer className="center bg-dark">
                     <p>Book Store &copy; 2019</p>
                 </footer>
-            </div>
+            </div >
         );
     }
 }
