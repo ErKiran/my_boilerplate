@@ -26,7 +26,7 @@ class Landingpage extends Component {
                     </div>
                 </header>
                 <footer className="center bg-dark">
-                    <p>Book Store &copy; 2019</p>
+                    <p>Book Store &copy; {new Date().getFullYear()}</p>
                 </footer>
             </div >
         );
