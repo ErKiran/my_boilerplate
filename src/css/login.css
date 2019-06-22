@@ -5,6 +5,8 @@
     -o-background-size: cover;
     background-size: cover;
     font-family: sans-serif;
+    width: 1366px;
+    height: 768px;
 }
 
 .loginbox{

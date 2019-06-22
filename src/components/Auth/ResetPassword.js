@@ -10,11 +10,13 @@ class ResetPassword extends Component {
 
     render() {
         return (
-            <div className="reset">
-                <form>
-                    <input type="email" name="email" id="" placeholder="Enter your Email" /><br />
-                    <p>Enter E-mail To reset Passport</p>
-                </form>
+            <div className="cover">
+                <div className="reset">
+                    <form>
+                        <input type="email" name="email" id="" placeholder="Enter your Email" /><br />
+                        <p>Enter E-mail To reset Passport</p>
+                    </form>
+                </div>
             </div>
         );
     }

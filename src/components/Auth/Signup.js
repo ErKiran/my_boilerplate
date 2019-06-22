@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { registerUser } from '../../actions/authactions'
+
 require('../../css/signup.css')
 
 class Signup extends Component {
@@ -12,6 +15,11 @@ class Signup extends Component {
             password: '',
             password2: '',
             errors: {}
+        }
+    }
+    componentDidMount() {
+        if (this.props.auth.isAuthenticated) {
+            this.props.history.push('/dashboard');
         }
     }
     onChange = (e) => {
@@ -30,13 +38,13 @@ class Signup extends Component {
         }
         else {
             console.log(user)
-            axios.post('http://localhost:5000/register', user).then(res => console.log(res));
+            this.props.registerUser(user, this.props.history)
         }
     }
 
     render() {
         return (
-            <div>
+            <div className="cover">
                 <div className="signupbox">
                     <img src="https://image.flaticon.com/icons/svg/1542/1542168.svg" className="avatar" />
                     <h1>Signup</h1>
@@ -82,4 +90,8 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+
+export default connect(mapStateToProps, { registerUser })(withRouter(Signup));
