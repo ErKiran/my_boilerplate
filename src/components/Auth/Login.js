@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loginUser } from '../../actions/authactions'
+import { loginUser } from '../../actions/authactions';
 import '../../css/login.css';
 
 class Login extends Component {

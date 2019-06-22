@@ -22,6 +22,7 @@ export const loginUser = userData => async dispatch => {
     try {
         // Get session_token from response
         const { token } = res.data;
+        console.log(res)
         // Set token to ls
         localStorage.setItem('jwtToken', token);
         // Set token to Auth header
