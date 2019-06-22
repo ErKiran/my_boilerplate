@@ -17,7 +17,7 @@ class Landingpage extends Component {
                                 Login
                             </button>
                         </Link>
-                        <span className="some-border"></span>
+                        {'  '}
                         <Link to="/signup">
                             <button className="signup">
                                 SignUp

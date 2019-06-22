@@ -47,6 +47,13 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
+        proxy: {
+            '/': {
+                target: 'http://localhost:5000',
+                secure: false
+            }
+
+        }
     },
     plugins: [
         new HtmlWebPackPlugin({
