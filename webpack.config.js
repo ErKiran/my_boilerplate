@@ -1,5 +1,12 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
 module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: "[name]-bundle.js",
+        publicPath: '/'
+    },
     module: {
         rules: [
             {
@@ -27,8 +34,19 @@ module.exports = {
                         loader: "css-loader"
                     }
                 ]
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                use: [
+                    {
+                        loader: "url-loader"
+                    }
+                ]
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebPackPlugin({

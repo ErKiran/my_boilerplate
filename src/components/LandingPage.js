@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 require('../css/Landingpage.css')
 
 class Landingpage extends Component {
@@ -11,8 +12,15 @@ class Landingpage extends Component {
                         <div className="title">
                             Welcome To Bookify
                     </div>
-                        <button className="login">Login</button>
-                        <button className="signup">SignUp</button>
+                        <button className="login">
+                            <Link to="/login" />
+                            Login
+                        </button>
+                        <span className="some-border"></span>
+                        <button className="signup">
+                            <Link to="/signup" />
+                            SignUp
+                            </button>
                     </div>
 
                 </header>
